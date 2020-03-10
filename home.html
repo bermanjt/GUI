@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../webgl.css" type="text/css">
+    <p>My First Paragraph</p>
+    <p id="demo"></p>
+  </head>
+<body>
+  
+
+
+<!-- Formatting of input location -->
+<form id = "frm1" action="#" method="get">
+  <h2>Please input dimension of incoming item</h2>
+  <div class="line">
+    <label for="w">Bin Width</label>
+    <input id="w" name="w" type="text" value="100">
+  </div>
+  <div class="line">
+    <label for="h">Bin Height</label>
+    <input id="h" name="h" type="text" value="100">
+  </div>
+  <div class="line">
+    <label for="h">Bin Length</label>
+    <input id="l" name="l" type="text" value="100">
+  </div>
+  <div class="line">
+    <input type="button" value="Place!" onclick="placeItem()"/>
+    <div id="output"></div>
+  </div>
+</form>
+<canvas id="glcanvas" width="640" height="480"></canvas>
+
+</body>
+<script>
+  var placeItem = function(){
+    var x = document.getElementById("frm1");
+    var text = "";
+    var i;
+    for(i = 0; i < x.length; ++i){
+      text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+  }
+</script>
+
+  <script src="gl-matrix.js"></script>
+  <script src="webgl.js"></script>
+</html>
+
+
